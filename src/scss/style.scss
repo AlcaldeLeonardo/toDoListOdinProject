@@ -5,8 +5,10 @@
     box-sizing: border-box;
 }
 .appContainer {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: grid;
     background-image: url(../img/pattern-background.png);
+    background-position-y: 0;
     grid-template-columns: 200px repeat(3, 1fr);
     grid-template-rows: 70px repeat(5, 1fr);
     min-height: 100vh;
@@ -26,14 +28,16 @@
     display: flex;
     padding-left: 2rem;
     align-items: center;
-    background-color: rgb(43, 43, 43);
+    background-color: rgba(0, 0, 0, 0.815);
     box-shadow: $boxShadowDefault;
+    backdrop-filter: blur(3px);
 }
 .aside {
     grid-area: aside;
     // padding-left: .5rem;
-    background-color: rgba(70, 70, 70, 0.747);
+    background: linear-gradient(90deg,rgba(0, 0, 0, 0.747),#0000005e);
     backdrop-filter: blur(5px);
+    border-right: 1px solid rgba(255, 255, 255, 0.322);
     box-shadow: $boxShadowDefault;
     min-height: 100vh;
     &__titleSection{
@@ -44,7 +48,7 @@
         justify-content: center;
         height: 70px;
         // background-color: rgb(191, 191, 255);
-        border-bottom: 3px dotted rgba(0, 0, 0, 0.37);
+        border-bottom: 3px dotted rgba(0, 0, 0, 0.301);
         padding: 1rem 0rem;
         &>.title{
             text-align: center;
@@ -55,14 +59,18 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
-        &>.card:hover{
-            background-color: darken($color: aliceblue, $amount: 2);
-            cursor: pointer;
+        &>.card{
+            background-color: rgba(255, 255, 255, 0.911);
+            &:hover{
+                background-color: darken($color: aliceblue, $amount: 2);
+                cursor: pointer;
+            }
         }
     }
 }
 .card {
-    background-color: rgb(255, 245, 245);
+    background-color: rgba(255, 245, 245, 0.76);
+    backdrop-filter: blur(2px);
     padding: 0.5rem;
     border-radius: 10px;
     box-shadow: $boxShadowDefault;
@@ -76,24 +84,27 @@
     gap: 20px;
     flex-wrap: wrap;
     &__addToDo{
+        z-index: 2;
         position: fixed;
         right: 26px;
         bottom: 15px;
 
         font-size: 2rem;
         font-weight: bold;
+        color: black;
         height: 70px;
         border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.363);
-        backdrop-filter: blur(1px);
+        background: linear-gradient(rgba(152, 200, 248, 0.623),rgba(243, 245, 252, 0.055));
+        border: 1px solid rgba(255, 255, 255, 0.116);
+        backdrop-filter: blur(2px);
         &:hover{
             cursor: pointer;
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.363);
             backdrop-filter: blur(5px);
             transition: .5s;
         }
         &:active{
-            background-color: darken($color: rgb(238, 243, 255), $amount: 10);
+            background-color: rgba(255, 255, 255, 0.829);
             transition: 0s;
         }
     }
@@ -102,7 +113,7 @@
         padding: 20px;
         grid-template-rows: 30px 1fr 40px ;
         width: 250px;
-        height: 250px;
+        height: 270px;
         &:last-child{
             margin-bottom: 80px;
         }
