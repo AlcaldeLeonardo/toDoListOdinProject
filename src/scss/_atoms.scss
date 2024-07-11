@@ -1,0 +1,53 @@
+@use 'sass:color';
+
+$btnPrimaryColor: rgb(96, 137, 250);
+$btnDangerColor: rgb(235, 33, 33);
+$boxShadowDefault: 2px 2px 4px rgba(0, 0, 0, 0.267);
+
+.title{
+    font-weight: bold;
+}
+.titleH1{
+    font-size: 2rem;
+}
+.titleH2{
+    font-size: 1.5rem;
+}
+.titleH3{
+    font-size: 1.2rem;
+}
+.btn{
+    background: none;
+    border: 1px solid $btnPrimaryColor;
+    color: $btnPrimaryColor;
+    border-radius: 20px;
+    width: 70px;
+    box-shadow: $boxShadowDefault;
+    &--primary{
+        background-color: $btnPrimaryColor;
+        color: white;
+        &:hover{
+            background-color: darken($color: $btnPrimaryColor, $amount: 12);
+            cursor: pointer;
+            transition: .5s;
+        }
+        &:active{
+            background-color: darken($color: $btnPrimaryColor, $amount: 20);
+            transition: 0s;
+        }
+    }
+    &--red{
+        background-color: $btnDangerColor;
+        color: white;
+        border: none;
+        &:hover{
+            background-color: darken($color: $btnDangerColor, $amount: 12);
+            cursor: pointer;
+            transition: .5s;
+        }
+        &:active{
+            background-color: darken($color: $btnDangerColor, $amount: 20);
+            transition: 0s;
+        }
+    }
+}

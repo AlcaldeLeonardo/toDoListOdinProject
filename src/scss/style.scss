@@ -1,0 +1,117 @@
+@use "sass:math";
+@import "atoms.scss";
+
+* {
+    box-sizing: border-box;
+}
+.appContainer {
+    display: grid;
+    background-image: url(../img/pattern-background.png);
+    grid-template-columns: 200px repeat(3, 1fr);
+    grid-template-rows: 70px repeat(5, 1fr);
+    min-height: 100vh;
+    grid-template-areas:
+        "aside header header header"
+        "aside main main main"
+        "aside main main main"
+        "aside main main main"
+        "aside main main main"
+        "aside main main main";
+}
+
+.header {
+    grid-area: header;
+    color: white;
+    min-height: 70px;
+    display: flex;
+    padding-left: 2rem;
+    align-items: center;
+    background-color: rgb(43, 43, 43);
+    box-shadow: $boxShadowDefault;
+}
+.aside {
+    grid-area: aside;
+    // padding-left: .5rem;
+    background-color: rgba(70, 70, 70, 0.747);
+    backdrop-filter: blur(5px);
+    box-shadow: $boxShadowDefault;
+    min-height: 100vh;
+    &__titleSection{
+        color: white;
+        display: flex;
+        background-color: rgba(0, 0, 0, 0.226);
+        align-items: center;
+        justify-content: center;
+        height: 70px;
+        // background-color: rgb(191, 191, 255);
+        border-bottom: 3px dotted rgba(0, 0, 0, 0.37);
+        padding: 1rem 0rem;
+        &>.title{
+            text-align: center;
+        }
+    }
+    &__cardSection{
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        &>.card:hover{
+            background-color: darken($color: aliceblue, $amount: 2);
+            cursor: pointer;
+        }
+    }
+}
+.card {
+    background-color: rgb(255, 245, 245);
+    padding: 0.5rem;
+    border-radius: 10px;
+    box-shadow: $boxShadowDefault;
+}
+.main {
+    position: relative;
+    grid-area: main;
+    display: flex;
+    padding: 20px;
+    // justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+    &__addToDo{
+        position: fixed;
+        right: 26px;
+        bottom: 15px;
+
+        font-size: 2rem;
+        font-weight: bold;
+        height: 70px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.363);
+        backdrop-filter: blur(1px);
+        &:hover{
+            cursor: pointer;
+            background-color: white;
+            backdrop-filter: blur(5px);
+            transition: .5s;
+        }
+        &:active{
+            background-color: darken($color: rgb(238, 243, 255), $amount: 10);
+            transition: 0s;
+        }
+    }
+    &__ToDoCard{
+        display: grid;
+        padding: 20px;
+        grid-template-rows: 30px 1fr 40px ;
+        width: 250px;
+        height: 250px;
+        &:last-child{
+            margin-bottom: 80px;
+        }
+    }
+    .ToDoCard__buttonBox{
+        display: flex;
+        justify-content: end;
+        gap: 10px;
+    }
+}
+
+
