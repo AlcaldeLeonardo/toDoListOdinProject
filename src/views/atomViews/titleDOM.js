@@ -1,5 +1,5 @@
-export function titleH2DOM(text, idDOM = "", classCss = "titleH2"){
-    const title = document.createElement(`h2`)
+export function titleDOM(text, tag = "h2", classCss = "titleH2", idDOM = ""){
+    const title = document.createElement(tag)
     title.className = classCss;
     if(idDOM) title.id = idDOM;
     title.textContent = text;
