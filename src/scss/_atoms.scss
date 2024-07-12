@@ -24,10 +24,12 @@ $boxShadowDefault: 2px 2px 4px rgba(0, 0, 0, 0.267);
     width: 70px;
     box-shadow: $boxShadowDefault;
     &--primary{
-        background-color: $btnPrimaryColor;
-        color: white;
+        background-color: #0000;
+        color: $btnPrimaryColor;
+        font-weight: bold;
         &:hover{
             background-color: darken($color: $btnPrimaryColor, $amount: 12);
+            color: white;
             cursor: pointer;
             transition: .5s;
         }
@@ -37,12 +39,13 @@ $boxShadowDefault: 2px 2px 4px rgba(0, 0, 0, 0.267);
         }
     }
     &--red{
-        background-color: $btnDangerColor;
-        color: white;
-        border: none;
+        background-color: #0000;
+        color: $btnDangerColor;
+        border: 1px solid $btnDangerColor;
         &:hover{
             background-color: darken($color: $btnDangerColor, $amount: 12);
             cursor: pointer;
+            color: white;
             transition: .5s;
         }
         &:active{

@@ -62,6 +62,9 @@
         gap: 20px;
         &>.card{
             background-color: rgba(255, 255, 255, 0.911);
+            &>.title{
+                margin-bottom: 1rem;
+            }
             &:hover{
                 background-color: darken($color: aliceblue, $amount: 2);
                 cursor: pointer;
@@ -70,7 +73,7 @@
     }
 }
 .card {
-    background-color: rgba(255, 245, 245, 0.719);
+    background-color: rgba(255, 245, 245, 0.521);
     border: 1px solid rgba(255, 255, 255, 0.788);
     backdrop-filter: blur(5px);
     padding: 0.5rem;
@@ -82,15 +85,17 @@
     grid-area: main;
     display: flex;
     padding: 20px;
-    // justify-content: space-around;
+    flex-direction: column;
+    justify-content: start;
+    // align-items: flex-start;
     gap: 20px;
     flex-wrap: wrap;
+
     &__addToDo{
         z-index: 2;
         position: fixed;
         right: 26px;
         bottom: 15px;
-
         font-size: 2rem;
         font-weight: bold;
         color: black;
@@ -99,30 +104,45 @@
         background: linear-gradient(rgba(152, 200, 248, 0.623),rgba(243, 245, 252, 0.055));
         border: 1px solid rgba(255, 255, 255, 0.678);
         backdrop-filter: blur(2px);
+
         &:hover{
             cursor: pointer;
             background-color: rgba(255, 255, 255, 0.363);
             backdrop-filter: blur(5px);
             transition: .5s;
+            
         }
         &:active{
             background-color: rgba(255, 255, 255, 0.829);
             transition: 0s;
         }
     }
+
     &__toDoCard{
         display: grid;
         padding: 20px;
-        grid-template-rows: 30px 1fr 40px ;
-        width: 250px;
-        height: 270px;
+        grid-template-rows: 30px 1fr 50px ;
+        grid-template-areas: "title" "body" "buttonBox";
+        // width: 250px;
+        // height: 270px;
         &:last-child{
             margin-bottom: 80px;
         }
     }
 }
+
 .toDoCard{
+    &__body{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    &__label{
+        font-weight: bold;
+    }
     &__buttonBox{
+        grid-area: buttonBox;
+        margin-top: 1rem;
         display: flex;
         justify-content: end;
         gap: 10px;

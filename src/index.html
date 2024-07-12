@@ -7,7 +7,7 @@
   </head>
   <body class="appContainer" id="root">
     <header class="header">
-      <h1 class="header_titleH1 title titleH1">Todo List</h1>
+      <h1 id="colectionMainTitle" class="header_titleH1 title titleH1">Cosas de La Casa</h1>
     </header>
     <aside class="aside">
       <div class="aside__titleSection">
@@ -15,21 +15,28 @@
       </div>
       <div class="aside__cardSection">
         <div class="aside__element card">
-          <h3 class="titleH3 title">ToDo Colection</h3>
-          <p>Lista de cosas para hacer despues del trabajo</p>
+          <h3 id = "colectionTitle" class="titleH3 title card__title">Cosas de La Casa</h3>
+          <p class="card__description">Lista de cosas para hacer despues del trabajo</p>
+          <div class="toDoCard__buttonBox buttonBox">
+            <button class="btn btn--primary">Edit</button>
+            <button class="btn btn--red">Delete</button>
+          </div>
         </div>
       </div>
     </aside>
     <main class="main">
-      <button class="main__addToDo btn">+</button>
+      <button id="addBtn" class="main__addToDo btn">+</button>
       <div class="main__toDoCard toDoCard card">
-        <h2 class="toDoCard__title card__title title titleH3">ToDo</h2>
-        <p  class="toDoCard__descrption card__description">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis
-          quaerat nesciunt laudantium deleniti saepe quidem veritatis beatae
-          nemo, dolorem expedita fugit amet in corporis error tempora, atque
-          delectus pariatur ea.
-        </p>
+        <h2 id= "taskTitle" class="toDoCard__title card__title title titleH3">Tender la Ropa</h2>
+        <div class="toDoCard__body">
+          <p id="taskDescription" class="toDoCard__description card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, eligendi saepe! Debitis nam commodi eos officiis facilis corrupti rem nulla voluptatibus illum tenetur, architecto delectus totam esse alias nihil nisi, ipsa quo id distinctio cum placeat incidunt adipisci quia! Dicta laboriosam ex quia veniam tenetur fuga voluptatem consequatur. Perspiciatis, ullam.</p>
+          <p class="toDoCard__priority card__priority">
+            <span class="toDoCard__label">Priority: </span><span id = "taskPriority">High</span>
+          </p>
+          <p class="toDoCard__dueDate card__dueDate">
+            <span class="toDoCard__label">Due Date: </span><span class="taskDueDate">21-02-2024</span>
+          </p>
+        </div>
         <div class="toDoCard__buttonBox buttonBox">
           <button class="btn btn--primary">Edit</button>
           <button class="btn btn--red">Delete</button>
