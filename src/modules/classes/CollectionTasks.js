@@ -1,4 +1,4 @@
-export class CollectionTasks{
+export class TasksCollection{
     #tasksArray;
 
     constructor(title,tasksArray = []){
