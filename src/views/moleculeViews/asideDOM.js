@@ -1,6 +1,6 @@
 import { CollectionArray } from "../../modules/classes/CollectionArray";
 import { titleDOM } from "../atomViews/titleDOM";
-import { collectionCard } from "./cards";
+import { collectionCard } from "./collectionCard";
 
 export function asideDOM(){
   const aside = document.createElement("aside")

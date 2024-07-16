@@ -10,7 +10,7 @@ export function editBtn() {
   return btn;
 }
 export function delBtn() {
-  const btn = btnDOM("Delete", "btn btn--red", "editBtn")
+  const btn = btnDOM("Delete", "btn btn--red", "delBtn")
   return btn;
 }
 

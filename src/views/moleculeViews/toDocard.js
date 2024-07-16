@@ -1,9 +1,9 @@
-import { CollectionArray } from "../../modules/classes/CollectionArray";
-import { TasksCollection } from "../../modules/classes/TasksCollection";
+import {taskCardDelBtnController} from "../../controllers/taskCardDelBtnController"
 import { paragraphDOM, spanWithLabelDOM } from "../atomViews/paragraph";
 import { titleDOM } from "../atomViews/titleDOM";
-import { updateScreen } from "../updateScreen";
 import { buttonBoxDOM } from "./buttonBoxDOM";
+import { collectionCardDelController } from "../../controllers/collectionCardDelController";
+import { setActiveCollectionController } from "../../controllers/setActiveCollectionController";
 
 export function toDocard(task) {
   const { id, title, description, priority, dueDate } = task;
@@ -41,27 +41,7 @@ export function toDocard(task) {
   
   card.appendChild(buttonBoxDOM())
 
-
-  return card;
-}
-
-export function collectionCard(tasksCollectionObj) {
-  const {title} = tasksCollectionObj
-  const card = document.createElement(`div`)
-  const cardTitle = titleDOM(title, "h3", "titleH3 title card__title", "colectionTitle")
-  
-  card.className = "aside__element card"
-  card.id = `collection${tasksCollectionObj.id}`
-
-  
-  card.appendChild(cardTitle);
-  card.appendChild(buttonBoxDOM());
-  
-  
-  cardTitle.addEventListener("click", () =>{
-    CollectionArray.setActiveCollection(tasksCollectionObj)
-    updateScreen(CollectionArray.ActiveCollection);
-  })
+  card.querySelector("#delBtn").addEventListener("click",()=> taskCardDelBtnController(task))
 
   return card;
 }

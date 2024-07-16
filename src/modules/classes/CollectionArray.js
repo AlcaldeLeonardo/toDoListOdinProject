@@ -7,9 +7,10 @@ export class CollectionArray {
   }
 
   static deleteCollection(collection) {
-    CollectionArray.collections = CollectionArray.filter(
+    CollectionArray.collections = CollectionArray.collections.filter(
       (obj) => obj.title !== collection.title
     );
+    CollectionArray.ActiveCollection = this.collections[this.collections.length-1]
   }
   static setActiveCollection(collection){
     CollectionArray.ActiveCollection = collection;

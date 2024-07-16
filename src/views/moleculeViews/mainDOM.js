@@ -1,5 +1,5 @@
 import { plusBtnDOM } from "../atomViews/btnsDOM";
-import { toDocard } from "./cards";
+import { toDocard } from "./toDocard";
 
 export function mainDOM(collectinObj){
   const {TasksArray} = collectinObj
