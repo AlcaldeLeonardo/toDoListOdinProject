@@ -5,6 +5,9 @@ import { updateScreen } from "../updateScreen";
 export function plusBtnDOM(){
   const btn = btnDOM("+", "main__addToDo btn", "addBtn")
 
+  if(CollectionArray.collections.length === 0){
+    btn.style.display = "none";
+  }
   btn.addEventListener("click", () => {
     updateScreen(CollectionArray.ActiveCollection, addTaskModal());
   })

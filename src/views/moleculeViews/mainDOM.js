@@ -19,8 +19,9 @@ export function mainDOM(collectinObj) {
   } else {
     mainElement.appendChild(
       titleDOM(
-        "You don't have Tasks Collections, press the Plus button to add new Tasks!!!",
-        "h1"
+        "You don't have nothing here yet, press the add Collection button to start!!!",
+        "h2",
+        "card titleH2 title"
       )
     );
   }

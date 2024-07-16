@@ -1,3 +1,4 @@
+import { addCollectionController } from "../../controllers/addCollectionController";
 import { addTaskController } from "../../controllers/addTaskController";
 import { removeModalController } from "../../controllers/removeModalController";
 import { CollectionArray } from "../../modules/classes/CollectionArray";
@@ -33,6 +34,25 @@ export function addTaskModal() {
     titleDOM("Add a Task", "h2", "modalcard__title title titleH2")
   );
   modal.appendChild(taskFormDOM());
+
+  return modal;
+}
+
+export function addCollectionModal() {
+  const modal = createDiv("addCollectionModal modalContainer__modalcard card");
+  const closeBtn = document.createElement("span");
+  closeBtn.className = "modalcard__close";
+  closeBtn.innerHTML = "X";
+
+  closeBtn.addEventListener("click", () => {
+    removeModalController(modal);
+  });
+  modal.appendChild(closeBtn);
+
+  modal.appendChild(
+    titleDOM("Add a Collection", "h2", "modalcard__title title titleH2")
+  );
+  modal.appendChild(collectionFormDOM());
 
   return modal;
 }
@@ -80,9 +100,43 @@ function taskFormDOM() {
   return taskForm;
 }
 
+function collectionFormDOM() {
+  const collectionForm = document.createElement("form");
+  collectionForm.className = "modalContainer__addCollectionForm addCollectionForm";
+
+  // Title
+  collectionForm.appendChild(
+    createInputFormDiv(
+      "collectionFormTitle modalContainer__formDiv modalContainer__formDiv formDiv formDiv--title",
+      "Title",
+      "titleCollection",
+      "Collection Name"
+    )
+  )
+  collectionForm.appendChild(createCollectionSubmitBtn());
+
+  return collectionForm;
+}
+
 function createDiv(classCss) {
   const div = document.createElement("div");
   div.className = classCss;
+  return div;
+}
+
+function createCollectionSubmitBtn() {
+  const div = createDiv("submitDiv");
+  const input = document.createElement("input");
+  input.id = "collectionSubmit";
+  input.type = "submit";
+  input.className = "submit__btn btn--primary";
+  input.value = "Add Collection";
+  div.appendChild(input);
+
+  input.addEventListener("click", (e) => {
+    addCollectionController(e)
+  });
+
   return div;
 }
 
