@@ -10,10 +10,7 @@
   z-index: 3;
   transition: 2s;
 
-  .collectionFormTitleInput{
-    margin-top: 1rem;
-  }
-
+  
   &> .card{
     position: relative;
     padding: 1rem;
@@ -30,7 +27,7 @@
     cursor: pointer;
   }
   
-  &__addTaskForm{
+  &__addTaskForm, &__addCollectionForm{
     margin: 1rem;
     display: flex;
     flex-direction: column;
