@@ -1,26 +1,41 @@
+import { addTaskController } from "../../controllers/addTaskController";
+import { removeModalController } from "../../controllers/removeModalController";
+import { CollectionArray } from "../../modules/classes/CollectionArray";
+import { Task } from "../../modules/classes/Task";
+import { TasksCollection } from "../../modules/classes/TasksCollection";
 import { titleDOM } from "../atomViews/titleDOM";
+import { updateScreen } from "../updateScreen";
 
-export function modalContainer(Modal){
-  const container = createDiv("modalContainer")
+export function modalContainer(Modal = null) {
+  const container = createDiv("modalContainer");
 
-  container.appendChild(Modal)
+  if (Modal) {
+    container.appendChild(Modal);
+  } else {
+    container.innerHTML = "";
+    container.style.display = "none";
+  }
 
-  return container
+  return container;
 }
-export function addTaskModal(){
-  const modal = createDiv("addTaskModal modalContainer__modalcard card")
-  const closeBtn = document.createElement("span")
-  closeBtn.className = "modalcard__close"
-  closeBtn.innerHTML = "X"
+export function addTaskModal() {
+  const modal = createDiv("addTaskModal modalContainer__modalcard card");
+  const closeBtn = document.createElement("span");
+  closeBtn.className = "modalcard__close";
+  closeBtn.innerHTML = "X";
+
+  closeBtn.addEventListener("click", () => {
+    removeModalController(modal);
+  });
 
   modal.appendChild(closeBtn);
-  modal.appendChild(titleDOM("Add a Task", "h2", "modalcard__title title titleH2"))
-  modal.appendChild(taskFormDOM())
+  modal.appendChild(
+    titleDOM("Add a Task", "h2", "modalcard__title title titleH2")
+  );
+  modal.appendChild(taskFormDOM());
 
-  return modal
+  return modal;
 }
-
-
 
 function taskFormDOM() {
   const taskForm = document.createElement("form");
@@ -51,10 +66,16 @@ function taskFormDOM() {
 
   // Due Date
   taskForm.appendChild(
-    createInputFormDiv("modalContainer__formDiv formDiv formDiv--dueDate", "Due Date", "dueDateTask", "", "date")
+    createInputFormDiv(
+      "modalContainer__formDiv formDiv formDiv--dueDate",
+      "Due Date",
+      "dueDateTask",
+      "",
+      "date"
+    )
   );
 
-  taskForm.appendChild(createSubmitBtn())
+  taskForm.appendChild(createSubmitBtn());
 
   return taskForm;
 }
@@ -65,28 +86,39 @@ function createDiv(classCss) {
   return div;
 }
 
-function createSubmitBtn(){
-  const div = createDiv("submitDiv")
-  const input = document.createElement("input")
-  input.id = "submit"
-  input.className = "submit__btn btn--primary"
-  input.value = "Add Task"
-  div.appendChild(input)
+function createSubmitBtn() {
+  const div = createDiv("submitDiv");
+  const input = document.createElement("input");
+  input.id = "submit";
+  input.type = "submit";
+  input.className = "submit__btn btn--primary";
+  input.value = "Add Task";
+  div.appendChild(input);
 
+  input.addEventListener("click", (e) => {
+    addTaskController(e)
+  });
 
-  return div
+  return div;
 }
 
-function createInputFormDiv(divClassCss, labelText,inputId, placeholderInput, inputType = "text") {
+function createInputFormDiv(
+  divClassCss,
+  labelText,
+  inputId,
+  placeholderInput,
+  inputType = "text"
+) {
   const input = document.createElement("input");
   const label = document.createElement("label");
   const div = createDiv(divClassCss);
 
   label.htmlFor = inputId;
-  label.textContent = labelText
+  label.textContent = labelText;
 
   input.className = "modalContainer__input";
-  input.type = inputType
+  input.required = true;
+  input.type = inputType;
   input.id = inputId;
   input.name = inputId;
   input.placeholder = placeholderInput;
@@ -106,7 +138,7 @@ function createTaskPriorityInputDiv() {
   label.htmlFor = id;
   label.textContent = "Priority";
   select.id = id;
-  select.className = "modalContainer__input"
+  select.className = "modalContainer__input";
 
   values.forEach((optionValue) => {
     const option = document.createElement("option");

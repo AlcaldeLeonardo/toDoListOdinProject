@@ -1,5 +1,13 @@
+import { CollectionArray } from "../../modules/classes/CollectionArray";
+import { addTaskModal } from "../moleculeViews/modalContainer";
+import { updateScreen } from "../updateScreen";
+
 export function plusBtnDOM(){
   const btn = btnDOM("+", "main__addToDo btn", "addBtn")
+
+  btn.addEventListener("click", () => {
+    updateScreen(CollectionArray.ActiveCollection, addTaskModal());
+  })
 
   return btn;
 }

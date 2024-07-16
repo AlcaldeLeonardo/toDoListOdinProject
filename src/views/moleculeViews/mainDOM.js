@@ -7,6 +7,8 @@ export function mainDOM(collectinObj) {
   const mainElement = document.createElement("main");
   mainElement.className = "main";
   mainElement.innerHTML = "";
+  
+  mainElement.appendChild(plusBtnDOM());
 
   if (collectinObj) {
     const { TasksArray } = collectinObj;
@@ -22,7 +24,6 @@ export function mainDOM(collectinObj) {
       )
     );
   }
-  mainElement.appendChild(plusBtnDOM());
 
   return mainElement;
 }

@@ -1,5 +1,6 @@
 .modalContainer{
-  position: absolute;
+  position: fixed;
+  backdrop-filter: blur(3px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,6 +8,7 @@
   width: 100vw;
   background-color: #0000006b;
   z-index: 3;
+  transition: 2s;
 
   &> .card{
     position: relative;
@@ -47,7 +49,9 @@
   margin-top: 2rem;
   display: flex;
   justify-content: end;
+  outline: none;
   & > .submit__btn{
+    outline: none;
     border:1px solid $btnPrimaryColor;
     border-radius: 20px;
     text-align: center;
