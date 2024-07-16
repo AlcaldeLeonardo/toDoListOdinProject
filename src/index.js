@@ -13,14 +13,14 @@ const toDo1 = new Task("Sacar la basura", "Otra tarea horrible", "medium",new Da
 const toDo2 = new Task("Resolver la ecuacion de la vida", "Tan filosifico iba a ser?", "high",new Date())
 const toDo3 = new Task("Hacer la merienda", "de amor no se vive", "low",new Date())
 
-const collection = new TasksCollection("Cosas de Prueba")
-collection.addTask(toDo0)
-collection.addTask(toDo1)
+const defaultCollection = new TasksCollection("Cosas de Prueba")
+defaultCollection.addTask(toDo0)
+defaultCollection.addTask(toDo1)
 const collection1 = new TasksCollection("Cosas del trabajo")
 collection1.addTask(toDo2)
 collection1.addTask(toDo3)
 
-CollectionArray.addCollection(collection)
+CollectionArray.addCollection(defaultCollection)
 CollectionArray.addCollection(collection1)
 
 
