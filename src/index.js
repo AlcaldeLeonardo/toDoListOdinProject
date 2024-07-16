@@ -26,7 +26,5 @@ CollectionArray.addCollection(collection1)
 
 // PRUEBAS DE RENDER
 
-// Header
-// CollectionArray.setActiveCollection()
 
 updateScreen(CollectionArray.ActiveCollection)
