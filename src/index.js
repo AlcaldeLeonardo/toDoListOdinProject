@@ -1,14 +1,9 @@
 import './css/reset.css'
-import { parallaxFX } from './modules/parallaxFX';
 import './scss/style.scss'
-import { renderer } from './views/renderer'
 import { Task } from './modules/classes/Task';
-import { collectionCard, toDocard } from './views/moleculeViews/cards';
-import { TasksCollection } from './modules/classes/CollectionTasks';
-import { mainDOM } from './views/moleculeViews/mainDOM';
+import { TasksCollection } from './modules/classes/TasksCollection';
 import { CollectionArray } from './modules/classes/CollectionArray';
-import { asideDOM } from './views/moleculeViews/asideDOM';
-import { headerDOM } from './views/moleculeViews/headerDOM';
+import { updateScreen } from './views/updateScreen';
 
 
 // Coleccion y tasks de prueba
@@ -32,14 +27,6 @@ CollectionArray.addCollection(collection1)
 // PRUEBAS DE RENDER
 
 // Header
+// CollectionArray.setActiveCollection()
 
-renderer(headerDOM(collection1));
-
-// aside
-renderer(asideDOM())
-
-// Main
-renderer(mainDOM(collection))
-
-
-parallaxFX();
+updateScreen(CollectionArray.ActiveCollection)

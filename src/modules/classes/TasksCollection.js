@@ -1,9 +1,12 @@
 export class TasksCollection{
     #tasksArray;
+    static staticId = 0;
 
     constructor(title,tasksArray = []){
+        this.id = TasksCollection.staticId
         this.title = title
         this.#tasksArray = tasksArray;
+        TasksCollection.staticId++;
     }
 
     get Title(){

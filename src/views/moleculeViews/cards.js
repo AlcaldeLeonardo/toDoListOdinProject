@@ -1,5 +1,8 @@
+import { CollectionArray } from "../../modules/classes/CollectionArray";
+import { TasksCollection } from "../../modules/classes/TasksCollection";
 import { paragraphDOM, spanWithLabelDOM } from "../atomViews/paragraph";
 import { titleDOM } from "../atomViews/titleDOM";
+import { updateScreen } from "../updateScreen";
 import { buttonBoxDOM } from "./buttonBoxDOM";
 
 export function toDocard(task) {
@@ -42,12 +45,19 @@ export function toDocard(task) {
   return card;
 }
 
-export function collectionCard(tasksCollection) {
-  const {title} = tasksCollection
+export function collectionCard(tasksCollectionObj) {
+  const {title} = tasksCollectionObj
   const card = document.createElement(`div`)
   card.className = "aside__element card"
+  card.id = `collection${tasksCollectionObj.id}`
 
-  card.appendChild(titleDOM(title, "h3", "titleH3 title card__title", "colectionTitle"));
+  const cardTitle = titleDOM(title, "h3", "titleH3 title card__title", "colectionTitle")
+  cardTitle.addEventListener("click", () =>{
+    CollectionArray.setActiveCollection(tasksCollectionObj)
+    updateScreen(CollectionArray.ActiveCollection);
+  })
+
+  card.appendChild(cardTitle);
   card.appendChild(buttonBoxDOM());
 
 
