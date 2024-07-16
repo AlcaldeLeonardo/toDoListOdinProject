@@ -1,5 +1,4 @@
 import { plusBtnDOM } from "../atomViews/btnsDOM";
-import { paragraphDOM } from "../atomViews/paragraph";
 import { titleDOM } from "../atomViews/titleDOM";
 import { toDocard } from "./toDocard";
 

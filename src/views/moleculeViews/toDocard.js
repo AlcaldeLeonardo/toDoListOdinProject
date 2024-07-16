@@ -2,8 +2,6 @@ import {taskCardDelBtnController} from "../../controllers/taskCardDelBtnControll
 import { paragraphDOM, spanWithLabelDOM } from "../atomViews/paragraph";
 import { titleDOM } from "../atomViews/titleDOM";
 import { buttonBoxDOM } from "./buttonBoxDOM";
-import { collectionCardDelController } from "../../controllers/collectionCardDelController";
-import { setActiveCollectionController } from "../../controllers/setActiveCollectionController";
 
 export function toDocard(task) {
   const { id, title, description, priority, dueDate } = task;

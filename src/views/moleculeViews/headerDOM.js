@@ -1,6 +1,4 @@
-import { addCollectionController } from "../../controllers/addCollectionController";
 import { CollectionArray } from "../../modules/classes/CollectionArray";
-import { TasksCollection } from "../../modules/classes/TasksCollection";
 import { titleDOM } from "../atomViews/titleDOM";
 import { updateScreen } from "../updateScreen";
 import { addCollectionModal } from "./modalContainer";

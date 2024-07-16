@@ -1,11 +1,7 @@
 import { addCollectionController } from "../../controllers/addCollectionController";
 import { addTaskController } from "../../controllers/addTaskController";
 import { removeModalController } from "../../controllers/removeModalController";
-import { CollectionArray } from "../../modules/classes/CollectionArray";
-import { Task } from "../../modules/classes/Task";
-import { TasksCollection } from "../../modules/classes/TasksCollection";
 import { titleDOM } from "../atomViews/titleDOM";
-import { updateScreen } from "../updateScreen";
 
 export function modalContainer(Modal = null) {
   const container = createDiv("modalContainer");
