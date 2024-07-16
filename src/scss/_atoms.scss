@@ -1,56 +1,56 @@
-@use 'sass:color';
+@use "sass:color";
 
 $btnPrimaryColor: rgb(96, 137, 250);
 $btnDangerColor: rgb(235, 33, 33);
 $boxShadowDefault: 2px 2px 4px rgba(0, 0, 0, 0.267);
 
-.title{
-    font-weight: bold;
+.title {
+  font-weight: bold;
 }
-.titleH1{
-    font-size: 2rem;
+.titleH1 {
+  font-size: 2rem;
 }
-.titleH2{
-    font-size: 1.5rem;
+.titleH2 {
+  font-size: 1.5rem;
 }
-.titleH3{
-    font-size: 1.2rem;
+.titleH3 {
+  font-size: 1.2rem;
 }
-.btn{
-    background: none;
-    border: 1px solid $btnPrimaryColor;
+.btn {
+  background: none;
+  border: 1px solid $btnPrimaryColor;
+  color: $btnPrimaryColor;
+  border-radius: 20px;
+  width: 70px;
+  box-shadow: $boxShadowDefault;
+  &--primary {
+    background-color: #0000;
     color: $btnPrimaryColor;
-    border-radius: 20px;
-    width: 70px;
-    box-shadow: $boxShadowDefault;
-    &--primary{
-        background-color: #0000;
-        color: $btnPrimaryColor;
-        font-weight: bold;
-        &:hover{
-            background-color: darken($color: $btnPrimaryColor, $amount: 12);
-            color: white;
-            cursor: pointer;
-            transition: .5s;
-        }
-        &:active{
-            background-color: darken($color: $btnPrimaryColor, $amount: 20);
-            transition: 0s;
-        }
+    font-weight: bold;
+    &:hover {
+      background-color: darken($color: $btnPrimaryColor, $amount: 12);
+      color: white;
+      cursor: pointer;
+      transition: 0.5s;
     }
-    &--red{
-        background-color: #0000;
-        color: $btnDangerColor;
-        border: 1px solid $btnDangerColor;
-        &:hover{
-            background-color: darken($color: $btnDangerColor, $amount: 12);
-            cursor: pointer;
-            color: white;
-            transition: .5s;
-        }
-        &:active{
-            background-color: darken($color: $btnDangerColor, $amount: 20);
-            transition: 0s;
-        }
+    &:active {
+      background-color: darken($color: $btnPrimaryColor, $amount: 20);
+      transition: 0s;
     }
+  }
+  &--red {
+    background-color: #0000;
+    color: $btnDangerColor;
+    border: 1px solid $btnDangerColor;
+    &:hover {
+      background-color: darken($color: $btnDangerColor, $amount: 12);
+      cursor: pointer;
+      color: white;
+      transition: 0.5s;
+    }
+    &:active {
+      background-color: darken($color: $btnDangerColor, $amount: 20);
+      transition: 0s;
+    }
+  }
 }
