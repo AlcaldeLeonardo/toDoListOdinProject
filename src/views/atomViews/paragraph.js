@@ -6,9 +6,15 @@ export function paragraphDOM(text, classCss = ""){
   return p;
 }
 
-export function spanWithLabelDOM(label, data){
-  if(data == "high") return `<span class="toDoCard__label">${label}: </span><span style= "color:red">${data}</span>`
-  if(data == "medium") return `<span class="toDoCard__label">${label}: </span><span style= "color:#d50">${data}</span>`
-  if(data == "low") return `<span class="toDoCard__label">${label}: </span><span style= "color:green">${data}</span>`
-  return `<span class="toDoCard__label">${label}: </span><span>${data}</span>`
+export function spanWithLabelDOM(label, data) {
+  const colorMap = {
+    high: "red",
+    medium: "#d50",
+    low: "green"
+  };
+
+  const color = colorMap[data] || "";
+  const style = color ? `style="color: ${color}"` : "";
+
+  return `<span class="toDoCard__label">${label}: </span><span ${style}>${data}</span>`;
 }
