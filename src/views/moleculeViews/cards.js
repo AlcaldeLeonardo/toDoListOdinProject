@@ -48,19 +48,20 @@ export function toDocard(task) {
 export function collectionCard(tasksCollectionObj) {
   const {title} = tasksCollectionObj
   const card = document.createElement(`div`)
+  const cardTitle = titleDOM(title, "h3", "titleH3 title card__title", "colectionTitle")
+  
   card.className = "aside__element card"
   card.id = `collection${tasksCollectionObj.id}`
 
-  const cardTitle = titleDOM(title, "h3", "titleH3 title card__title", "colectionTitle")
+  
+  card.appendChild(cardTitle);
+  card.appendChild(buttonBoxDOM());
+  
+  
   cardTitle.addEventListener("click", () =>{
     CollectionArray.setActiveCollection(tasksCollectionObj)
     updateScreen(CollectionArray.ActiveCollection);
   })
-
-  card.appendChild(cardTitle);
-  card.appendChild(buttonBoxDOM());
-
-
 
   return card;
 }
