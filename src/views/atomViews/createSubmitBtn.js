@@ -1,5 +1,5 @@
 import { addTaskController } from "../../controllers/addTaskController";
-import { updateStorage } from "../../controllers/updateStorage";
+import { updateStorage } from "../../modules/updateStorage";
 import { createDiv } from "./createDiv";
 
 
