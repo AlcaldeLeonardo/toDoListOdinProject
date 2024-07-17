@@ -1,5 +1,6 @@
 import {taskCardDelBtnController} from "../../controllers/taskCardDelBtnController"
-import { paragraphDOM, spanWithLabelDOM } from "../atomViews/paragraph";
+import { paragraphDOM } from "../atomViews/paragraph";
+import { spanWithLabelDOM } from "../atomViews/spanWithLabelDOM";
 import { titleDOM } from "../atomViews/titleDOM";
 import { buttonBoxDOM } from "./buttonBoxDOM";
 
