@@ -1,4 +1,4 @@
-import { createDiv } from "./createDiv";
+import { createDiv } from "../atomViews/createDiv";
 
 export function modalContainer(Modal = null) {
   const container = createDiv("modalContainer");

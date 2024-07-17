@@ -1,5 +1,5 @@
 import { createInputFormDiv } from "./createInputFormDiv";
-import { createCollectionSubmitBtn } from "./createCollectionSubmitBtn";
+import { createCollectionSubmitBtn } from "../atomViews/createCollectionSubmitBtn";
 
 export function collectionFormDOM() {
   const collectionForm = document.createElement("form");

@@ -1,4 +1,4 @@
-import { createDiv } from "./createDiv";
+import { createDiv } from "../atomViews/createDiv";
 
 export function createTaskPriorityInputDiv() {
   let id = "taskPriority";

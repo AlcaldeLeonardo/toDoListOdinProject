@@ -1,6 +1,6 @@
 import { removeModalController } from "../../controllers/removeModalController";
 import { titleDOM } from "../atomViews/titleDOM";
-import { createDiv } from "./createDiv";
+import { createDiv } from "../atomViews/createDiv";
 import { collectionFormDOM } from "./collectionFormDOM";
 
 export function addCollectionModal() {

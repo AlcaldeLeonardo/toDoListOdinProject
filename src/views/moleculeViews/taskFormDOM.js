@@ -1,6 +1,6 @@
 import { createTaskPriorityInputDiv } from "./createTaskPriorityInputDiv";
 import { createInputFormDiv } from "./createInputFormDiv";
-import { createSubmitBtn } from "./createSubmitBtn";
+import { createSubmitBtn } from "../atomViews/createSubmitBtn";
 
 export function taskFormDOM() {
   const taskForm = document.createElement("form");
