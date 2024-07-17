@@ -1,7 +1,7 @@
 import { CollectionArray } from "../../modules/classes/CollectionArray";
 import { titleDOM } from "../atomViews/titleDOM";
 import { updateScreen } from "../updateScreen";
-import { addCollectionModal } from "./modalContainer";
+import { addCollectionModal } from "./addCollectionModal";
 
 export function headerDOM(collection) {
   const header = document.createElement("header");

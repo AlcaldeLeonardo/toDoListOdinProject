@@ -1,6 +1,6 @@
 import { CollectionArray } from "../modules/classes/CollectionArray";
 import { updateScreen } from "../views/updateScreen";
-import { updateStorage } from "./storageControllers";
+import { updateStorage } from "./updateStorage";
 
 export function taskCardDelBtnController(task){
     const ActiveCollection = CollectionArray.ActiveCollection;

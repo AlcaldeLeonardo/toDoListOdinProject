@@ -3,24 +3,13 @@ import { Task } from "../modules/classes/Task";
 import { TasksCollection } from "../modules/classes/TasksCollection";
 
 /**
- * Updates the "collections" item in the local storage with the current state of the CollectionArray.
- *
- * @return {void} This function does not return a value.
- */
-export function updateStorage() {
-  localStorage.setItem(
-    "collections",
-    JSON.stringify(CollectionArray.collections)
-  );
-}
-
-
-/**
  * Retrieves the stored collections and tasks from the local storage and
  * creates the corresponding objects.
  *
  * @return {void} This function does not return a value.
  */
+
+
 export function getStorage() {
   // If there is something in the local storage, we must have called this function
   // before and have some data saved. So we must retrieve the collections from
@@ -56,4 +45,3 @@ export function getStorage() {
     });
   }
 }
-

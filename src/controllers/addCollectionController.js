@@ -1,7 +1,7 @@
 import { CollectionArray } from "../modules/classes/CollectionArray";
 import { TasksCollection } from "../modules/classes/TasksCollection";
 import { updateScreen } from "../views/updateScreen";
-import { updateStorage } from "./storageControllers";
+import { updateStorage } from "./updateStorage";
 
 export function addCollectionController(e) {
   const form = document.querySelector(

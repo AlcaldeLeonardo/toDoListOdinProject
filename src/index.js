@@ -3,7 +3,7 @@ import './scss/style.scss'
 
 import { CollectionArray } from './modules/classes/CollectionArray';
 import { updateScreen } from './views/updateScreen';
-import { getStorage } from './controllers/storageControllers';
+import { getStorage } from "./controllers/getStorage";
 
 // App Initialization
 getStorage();

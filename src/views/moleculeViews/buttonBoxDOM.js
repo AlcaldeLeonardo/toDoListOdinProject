@@ -1,4 +1,5 @@
-import { delBtn, editBtn } from "../atomViews/btnsDOM";
+import { delBtn } from "../atomViews/delBtn";
+import { editBtn } from "../atomViews/editBtn";
 
 export function buttonBoxDOM(){
 

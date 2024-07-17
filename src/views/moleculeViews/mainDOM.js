@@ -1,4 +1,4 @@
-import { plusBtnDOM } from "../atomViews/btnsDOM";
+import { plusBtnDOM } from "../atomViews/plusBtnDOM";
 import { titleDOM } from "../atomViews/titleDOM";
 import { toDocard } from "./toDocard";
 
