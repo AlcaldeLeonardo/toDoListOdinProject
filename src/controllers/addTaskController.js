@@ -1,5 +1,6 @@
 import { CollectionArray } from "../modules/classes/CollectionArray";
 import { Task } from "../modules/classes/Task";
+import { updateStorage } from "../modules/updateStorage";
 import { modalContainer } from "../views/moleculeViews/modalContainer";
 import { updateScreen } from "../views/updateScreen";
 import { removeModalController } from "./removeModalController";
@@ -18,6 +19,7 @@ export function addTaskController(e) {
     const newTask = new Task(title, description, priority, dueDate);
     CollectionArray.ActiveCollection.addTask(newTask);
     removeModalController(modalContainer());
+    updateStorage()
     updateScreen(CollectionArray.ActiveCollection);
   }
 }
