@@ -1,6 +1,6 @@
-import { CollectionArray } from "../modules/classes/CollectionArray";
-import { Task } from "../modules/classes/Task";
-import { TasksCollection } from "../modules/classes/TasksCollection";
+import { CollectionArray } from "./classes/CollectionArray";
+import { Task } from "./classes/Task";
+import { TasksCollection } from "./classes/TasksCollection";
 
 /**
  * Retrieves the stored collections and tasks from the local storage and
