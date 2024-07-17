@@ -1,6 +1,7 @@
 import { addCollectionController } from "../../controllers/addCollectionController";
 import { addTaskController } from "../../controllers/addTaskController";
 import { removeModalController } from "../../controllers/removeModalController";
+import { updateStorage } from "../../controllers/storageControllers";
 import { titleDOM } from "../atomViews/titleDOM";
 
 export function modalContainer(Modal = null) {
@@ -147,6 +148,7 @@ function createSubmitBtn() {
 
   input.addEventListener("click", (e) => {
     addTaskController(e)
+    updateStorage()
   });
 
   return div;

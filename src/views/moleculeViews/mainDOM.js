@@ -10,9 +10,9 @@ export function mainDOM(collectinObj) {
   mainElement.appendChild(plusBtnDOM());
 
   if (collectinObj) {
-    const { TasksArray } = collectinObj;
+    const tasksArray = collectinObj.tasksArray;
 
-    TasksArray.forEach((task) => {
+    tasksArray.forEach((task) => {
       mainElement.appendChild(toDocard(task));
     });
   } else {

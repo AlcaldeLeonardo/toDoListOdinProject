@@ -1,11 +1,10 @@
 export class TasksCollection{
-    #tasksArray;
     static staticId = 0;
 
     constructor(title,tasksArray = []){
         this.id = TasksCollection.staticId
         this.title = title
-        this.#tasksArray = tasksArray;
+        this.tasksArray = tasksArray;
         TasksCollection.staticId++;
     }
 
@@ -13,13 +12,13 @@ export class TasksCollection{
         return this.title;
     }
     get TasksArray(){
-        return this.#tasksArray;
+        return this.tasksArray;
     }
     addTask(task){
-        this.#tasksArray.push(task)
+        this.tasksArray.push(task)
     }
 
     deleteTask(taskId){
-        this.#tasksArray = this.#tasksArray.filter(obj => obj.id !== taskId);
+        this.tasksArray = this.tasksArray.filter(obj => obj.id !== taskId);
     }
 }
