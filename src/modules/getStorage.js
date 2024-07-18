@@ -35,7 +35,8 @@ export function getStorage() {
           task.title,
           task.description,
           task.priority,
-          task.dueDate
+          task.dueDate,
+          task.success
         );
 
         // Add this new Task object to the TasksCollection object that we created
