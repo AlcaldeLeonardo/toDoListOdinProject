@@ -7,7 +7,7 @@ export function spanWithLabelDOM(label, data) {
   };
 
   const color = colorMap[data] || "";
-  const style = color ? `style="color: ${color}"` : "";
+  const style = color ? `style="font-weight: bold; color: ${color}"` : "";
 
   return `<span class="toDoCard__label">${label}: </span><span ${style}>${data}</span>`;
 }

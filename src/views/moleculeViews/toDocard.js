@@ -3,6 +3,7 @@ import { paragraphDOM } from "../atomViews/paragraph";
 import { spanWithLabelDOM } from "../atomViews/spanWithLabelDOM";
 import { titleDOM } from "../atomViews/titleDOM";
 import { buttonBoxDOM } from "./buttonBoxDOM";
+import { taskCardButtonBoxDOM } from "./taskCardButtonBoxDOM";
 
 export function toDocard(task) {
   const { id, title, description, priority, dueDate } = task;
@@ -12,6 +13,16 @@ export function toDocard(task) {
   card.className = "main__toDoCard toDoCard card";
   card.id = id;
 
+  const priorityClasses = {
+    high: "toDoCard--high",
+    medium: "toDoCard--medium",
+    low: "toDoCard--low",
+  };
+  
+  const priorityClass = priorityClasses[task.priority];
+  if (priorityClass) {
+    card.classList.add(priorityClass);
+  }
   // Task Card Title
   card.appendChild(
     titleDOM(
@@ -25,6 +36,9 @@ export function toDocard(task) {
   // Task Card Body
   const cardBody = document.createElement(`div`);
   cardBody.classList = "toDoCard__body";
+  if(task.success === true){
+    card.classList.add("toDoCard--done")
+  }
   card.appendChild(cardBody)
 
   // Task Card Descrition
@@ -38,7 +52,7 @@ export function toDocard(task) {
 
   // Task Card ButtonBox
   
-  card.appendChild(buttonBoxDOM())
+  card.appendChild(taskCardButtonBoxDOM(task))
 
   card.querySelector("#delBtn").addEventListener("click",()=> taskCardDelBtnController(task))
 
