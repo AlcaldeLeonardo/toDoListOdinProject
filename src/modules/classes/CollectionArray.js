@@ -7,10 +7,11 @@ export class CollectionArray {
   }
 
   static deleteCollection(collection) {
-    CollectionArray.collections = CollectionArray.collections.filter(
-      (obj) => obj.id !== collection.id
-    );
-    CollectionArray.ActiveCollection = this.collections[this.collections.length-1]
+    const index = CollectionArray.collections.findIndex(obj => obj.id === collection.id);
+    if (index !== -1) {
+      CollectionArray.collections.splice(index, 1);
+      CollectionArray.ActiveCollection = CollectionArray.collections[0]
+    }
   }
   static setActiveCollection(collection){
     CollectionArray.ActiveCollection = collection;
