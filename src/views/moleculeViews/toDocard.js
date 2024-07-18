@@ -3,6 +3,7 @@ import { paragraphDOM } from "../atomViews/paragraph";
 import { spanWithLabelDOM } from "../atomViews/spanWithLabelDOM";
 import { titleDOM } from "../atomViews/titleDOM";
 import { buttonBoxDOM } from "./buttonBoxDOM";
+import { coloringTheCard } from "../coloringTheCard";
 import { taskCardButtonBoxDOM } from "./taskCardButtonBoxDOM";
 
 export function toDocard(task) {
@@ -13,16 +14,7 @@ export function toDocard(task) {
   card.className = "main__toDoCard toDoCard card";
   card.id = id;
 
-  const priorityClasses = {
-    high: "toDoCard--high",
-    medium: "toDoCard--medium",
-    low: "toDoCard--low",
-  };
   
-  const priorityClass = priorityClasses[task.priority];
-  if (priorityClass) {
-    card.classList.add(priorityClass);
-  }
   // Task Card Title
   card.appendChild(
     titleDOM(
@@ -46,6 +38,7 @@ export function toDocard(task) {
   
   //Task Card Priority
   cardBody.appendChild(paragraphDOM(spanWithLabelDOM("Priority", priority),"toDoCard__priority card__priority"));
+  coloringTheCard(card, task)
   
   // Task Card Due Date
   cardBody.appendChild(paragraphDOM(spanWithLabelDOM("Due Date", dueDate), "toDoCard__dueDate card__dueDate"));
@@ -58,4 +51,3 @@ export function toDocard(task) {
 
   return card;
 }
-

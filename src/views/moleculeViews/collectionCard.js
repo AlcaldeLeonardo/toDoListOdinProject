@@ -4,6 +4,7 @@ import { CollectionArray } from "../../modules/classes/CollectionArray"
 import { titleDOM } from "../atomViews/titleDOM"
 import { updateScreen } from "../updateScreen"
 import { buttonBoxDOM } from "./buttonBoxDOM"
+import { markCollectionsAlreadyBeenMade } from "../markCollectionsAlreadyBeenMade"
 
 export function collectionCard(tasksCollectionObj) {
   const {title} = tasksCollectionObj
@@ -13,12 +14,7 @@ export function collectionCard(tasksCollectionObj) {
   card.className = "aside__element card"
   card.id = `collection${tasksCollectionObj.id}`
 
-  const pendingTasks = tasksCollectionObj.tasksArray.some(task => task.success === false)
-  console.log(pendingTasks)
-  console.log(tasksCollectionObj.tasksArray.length)
-  if (tasksCollectionObj.tasksArray.length !== 0 && !pendingTasks) {
-    card.classList.add("card--done")
-  }
+  markCollectionsAlreadyBeenMade(card, tasksCollectionObj);
   
   card.appendChild(cardTitle);
   card.appendChild(buttonBoxDOM());
