@@ -7,5 +7,5 @@ export function taskCardDelBtnController(task){
 
     ActiveCollection.deleteTask(task.id)
     updateStorage();
-    updateScreen(CollectionArray.ActiveCollection)
+    updateScreen()
 }

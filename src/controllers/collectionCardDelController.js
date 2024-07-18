@@ -5,5 +5,5 @@ import { updateStorage } from "../modules/updateStorage";
 export function collectionCardDelController(tasksCollectionObj) {
     CollectionArray.deleteCollection(tasksCollectionObj);
     updateStorage();
-    updateScreen(CollectionArray.ActiveCollection);
+    updateScreen();
 }
