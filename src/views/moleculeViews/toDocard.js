@@ -2,9 +2,9 @@ import {taskCardDelBtnController} from "../../controllers/taskCardDelBtnControll
 import { paragraphDOM } from "../atomViews/paragraph";
 import { spanWithLabelDOM } from "../atomViews/spanWithLabelDOM";
 import { titleDOM } from "../atomViews/titleDOM";
-import { buttonBoxDOM } from "./buttonBoxDOM";
 import { coloringTheCard } from "../coloringTheCard";
 import { taskCardButtonBoxDOM } from "./taskCardButtonBoxDOM";
+import { format } from "date-fns";
 
 export function toDocard(task) {
   const { id, title, description, priority, dueDate } = task;
@@ -41,7 +41,7 @@ export function toDocard(task) {
   coloringTheCard(card, task)
   
   // Task Card Due Date
-  cardBody.appendChild(paragraphDOM(spanWithLabelDOM("Due Date", dueDate), "toDoCard__dueDate card__dueDate"));
+cardBody.appendChild(paragraphDOM(spanWithLabelDOM("Due Date", format(dueDate, "PPPP")), "toDoCard__dueDate card__dueDate"));
 
   // Task Card ButtonBox
   
