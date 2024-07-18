@@ -14,7 +14,7 @@ export function successBtn(task) {
     task.success ? (task.success = false) : (task.success = true);
     btn.innerHTML = task.success ? "Done ✓" : "Done";
     updateStorage();
-    updateScreen(CollectionArray.ActiveCollection);
+    updateScreen();
   });
 
   return btn;
