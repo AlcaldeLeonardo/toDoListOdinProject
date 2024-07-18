@@ -20,6 +20,6 @@ export function addTaskController(e) {
     CollectionArray.ActiveCollection.addTask(newTask);
     removeModalController(modalContainer());
     updateStorage()
-    updateScreen(CollectionArray.ActiveCollection);
+    updateScreen();
   }
 }

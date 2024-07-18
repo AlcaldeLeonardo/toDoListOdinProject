@@ -10,7 +10,7 @@ export function plusBtnDOM(){
     btn.style.display = "none";
   }
   btn.addEventListener("click", () => {
-    updateScreen(CollectionArray.ActiveCollection, addTaskModal());
+    updateScreen(addTaskModal());
 
     document.querySelector("#titleTask").focus();
   })

@@ -1,4 +1,3 @@
-import { CollectionArray } from "../../modules/classes/CollectionArray";
 import { titleDOM } from "../atomViews/titleDOM";
 import { updateScreen } from "../updateScreen";
 import { addCollectionModal } from "./addCollectionModal";
@@ -10,7 +9,7 @@ export function headerDOM(collection) {
   addColectionBtn.className = "header__addColectionBtn btn btn--primary";
 
   addColectionBtn.addEventListener("click", () => {
-    updateScreen(CollectionArray.ActiveCollection, addCollectionModal());
+    updateScreen(addCollectionModal());
     document.querySelector("#titleCollection").focus();
   });
 

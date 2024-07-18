@@ -14,6 +14,6 @@ export function addCollectionController(e) {
     const collection = new TasksCollection(title);
     CollectionArray.addCollection(collection);
     updateStorage()
-    updateScreen(CollectionArray.ActiveCollection);
+    updateScreen();
   }
 }
