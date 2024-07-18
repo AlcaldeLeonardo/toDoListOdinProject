@@ -2,6 +2,7 @@
 
 $btnPrimaryColor: rgb(96, 137, 250);
 $btnDangerColor: rgb(235, 33, 33);
+$btnSuccessColor: rgb(34, 107, 34);
 $boxShadowDefault: 2px 2px 4px rgba(0, 0, 0, 0.267);
 
 .title {
@@ -50,6 +51,22 @@ $boxShadowDefault: 2px 2px 4px rgba(0, 0, 0, 0.267);
     }
     &:active {
       background-color: darken($color: $btnDangerColor, $amount: 20);
+      transition: 0s;
+    }
+
+  }
+  &--green {
+    background-color: #0000;
+    color: $btnSuccessColor;
+    border: 1px solid $btnSuccessColor;
+    &:hover {
+      background-color: darken($color:$btnSuccessColor, $amount: 12);
+      cursor: pointer;
+      color: white;
+      transition: 0.5s;
+    }
+    &:active {
+      background-color: darken($color:$btnSuccessColor, $amount: 17);
       transition: 0s;
     }
   }
