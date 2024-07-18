@@ -10,7 +10,7 @@ export function taskFormDOM() {
   taskForm.appendChild(
     createInputFormDiv(
       "modalContainer__formDiv modalContainer__formDiv formDiv formDiv--title",
-      "Title",
+      "Title *",
       "titleTask",
       "Make the Plate"
     )
@@ -36,7 +36,7 @@ export function taskFormDOM() {
   taskForm.appendChild(
     createInputFormDiv(
       "modalContainer__formDiv formDiv formDiv--dueDate",
-      "Due Date",
+      "Due Date *",
       "dueDateTask",
       "",
       "date"
