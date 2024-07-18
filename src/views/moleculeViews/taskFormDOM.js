@@ -22,9 +22,12 @@ export function taskFormDOM() {
       "modalContainer__formDiv formDiv formDiv--description",
       "Description",
       "taskDescription",
-      "... is a nice day for Make the plate"
+      "... is a nice day for Make the plate",
+      "text",
+      false
     )
   );
+
 
   // Priority
   taskForm.appendChild(createTaskPriorityInputDiv());

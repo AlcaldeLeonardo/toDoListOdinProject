@@ -6,7 +6,8 @@ export function createInputFormDiv(
   labelText,
   inputId,
   placeholderInput,
-  inputType = "text"
+  inputType = "text",
+  required = true
 ) {
   const input = document.createElement("input");
   const label = document.createElement("label");
@@ -16,7 +17,7 @@ export function createInputFormDiv(
   label.textContent = labelText;
 
   input.className = "modalContainer__input";
-  input.required = true;
+  input.required = required;
   input.type = inputType;
   input.id = inputId;
   input.name = inputId;
