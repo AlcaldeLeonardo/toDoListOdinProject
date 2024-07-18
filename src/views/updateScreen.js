@@ -20,5 +20,4 @@ export function updateScreen(ActiveColeccion, modal = null) {
 
   parallaxFX();
 
-  console.log("gp")
 }
