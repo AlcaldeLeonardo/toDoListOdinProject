@@ -9,7 +9,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: grid;
     background-image: url(../img/pattern-background.png);
-    background-position-y: 0;
+    background-size: cover;
     grid-template-columns: 200px repeat(3, 1fr);
     grid-template-rows: 70px repeat(5, 1fr);
     min-height: 100vh;
