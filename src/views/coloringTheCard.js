@@ -1,12 +1,12 @@
-export function coloringTheCard(card, task) {
+export function coloringTheCard (card, task) {
   const priorityClasses = {
-    high: "toDoCard--high",
-    medium: "toDoCard--medium",
-    low: "toDoCard--low",
-  };
+    high: 'toDoCard--high',
+    medium: 'toDoCard--medium',
+    low: 'toDoCard--low'
+  }
 
-  const priorityClass = priorityClasses[task.priority];
+  const priorityClass = priorityClasses[task.priority]
   if (priorityClass) {
-    card.classList.add(priorityClass);
+    card.classList.add(priorityClass)
   }
 }

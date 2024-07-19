@@ -1,11 +1,11 @@
-import { CollectionArray } from "../modules/classes/CollectionArray";
-import { updateScreen } from "../views/updateScreen";
-import { updateStorage } from "../modules/updateStorage";
+import { CollectionArray } from '../modules/classes/CollectionArray'
+import { updateScreen } from '../views/updateScreen'
+import { updateStorage } from '../modules/updateStorage'
 
-export function taskCardDelBtnController(task){
-    const ActiveCollection = CollectionArray.ActiveCollection;
+export function taskCardDelBtnController (task) {
+  const ActiveCollection = CollectionArray.ActiveCollection
 
-    ActiveCollection.deleteTask(task.id)
-    updateStorage();
-    updateScreen()
+  ActiveCollection.deleteTask(task.id)
+  updateStorage()
+  updateScreen()
 }

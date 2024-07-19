@@ -1,6 +1,6 @@
-import { CollectionArray } from "./classes/CollectionArray";
-import { Task } from "./classes/Task";
-import { TasksCollection } from "./classes/TasksCollection";
+import { CollectionArray } from './classes/CollectionArray'
+import { Task } from './classes/Task'
+import { TasksCollection } from './classes/TasksCollection'
 
 /**
  * Retrieves the stored collections and tasks from the local storage and
@@ -9,23 +9,22 @@ import { TasksCollection } from "./classes/TasksCollection";
  * @return {void} This function does not return a value.
  */
 
-
-export function getStorage() {
+export function getStorage () {
   // If there is something in the local storage, we must have called this function
   // before and have some data saved. So we must retrieve the collections from
   // the local storage and create the corresponding objects.
-  if (localStorage.getItem("collections")) {
-    const StorageCollections = JSON.parse(localStorage.getItem("collections"));
+  if (window.localStorage.getItem('collections')) {
+    const StorageCollections = JSON.parse(window.localStorage.getItem('collections'))
 
     // Go through each collection that we have stored in the local storage.
     StorageCollections.forEach((collection) => {
       // Create a new TasksCollection object with the title that we have stored
       // in the local storage.
-      const collectionObj = new TasksCollection(collection.title);
+      const collectionObj = new TasksCollection(collection.title)
 
       // Add this new TasksCollection object to the CollectionArray so that we can
       // access it later.
-      CollectionArray.addCollection(collectionObj);
+      CollectionArray.addCollection(collectionObj)
 
       // Go through each task that we have stored in the local storage.
       collection.tasksArray.forEach((task) => {
@@ -37,12 +36,12 @@ export function getStorage() {
           task.priority,
           task.dueDate,
           task.success
-        );
+        )
 
         // Add this new Task object to the TasksCollection object that we created
         // above.
-        collectionObj.addTask(taskObj);
-      });
-    });
+        collectionObj.addTask(taskObj)
+      })
+    })
   }
 }

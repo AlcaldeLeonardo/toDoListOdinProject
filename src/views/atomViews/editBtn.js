@@ -1,8 +1,7 @@
-import { btnDOM } from "./btnDOM";
+import { btnDOM } from './btnDOM'
 
+export function editBtn () {
+  const btn = btnDOM('Edit', 'btn btn--primary', 'editBtn')
 
-export function editBtn() {
-  const btn = btnDOM("Edit", "btn btn--primary", "editBtn");
-
-  return btn;
+  return btn
 }

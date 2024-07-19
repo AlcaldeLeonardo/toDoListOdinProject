@@ -1,20 +1,19 @@
-import { CollectionArray } from "../../modules/classes/CollectionArray";
-import { addTaskModal } from "../moleculeViews/addTaskModal";
-import { updateScreen } from "../updateScreen";
-import { btnDOM } from "./btnDOM";
+import { CollectionArray } from '../../modules/classes/CollectionArray'
+import { addTaskModal } from '../moleculeViews/addTaskModal'
+import { updateScreen } from '../updateScreen'
+import { btnDOM } from './btnDOM'
 
-export function plusBtnDOM(){
-  const btn = btnDOM("+", "main__addToDo btn", "addBtn")
+export function plusBtnDOM () {
+  const btn = btnDOM('+', 'main__addToDo btn', 'addBtn')
 
-  if(CollectionArray.collections.length === 0){
-    btn.style.display = "none";
+  if (CollectionArray.collections.length === 0) {
+    btn.style.display = 'none'
   }
-  btn.addEventListener("click", () => {
-    updateScreen(addTaskModal());
+  btn.addEventListener('click', () => {
+    updateScreen(addTaskModal())
 
-    document.querySelector("#titleTask").focus();
+    document.querySelector('#titleTask').focus()
   })
 
-  return btn;
+  return btn
 }
-

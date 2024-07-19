@@ -1,14 +1,13 @@
 import './css/reset.css'
 import './scss/style.scss'
 
-import { updateScreen } from './views/updateScreen';
-import { getStorage } from "./modules/getStorage";
-import { setFavicon } from './setFavicon';
+import { updateScreen } from './views/updateScreen'
+import { getStorage } from './modules/getStorage'
+import { setFavicon } from './setFavicon'
 
-
-setFavicon();
+setFavicon()
 
 // App Initialization
-getStorage();
+getStorage()
 // Screen Initialization
 updateScreen()

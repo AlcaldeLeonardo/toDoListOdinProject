@@ -1,15 +1,14 @@
-import { createDiv } from "../atomViews/createDiv";
+import { createDiv } from '../atomViews/createDiv'
 
-export function modalContainer(Modal = null) {
-  const container = createDiv("modalContainer");
+export function modalContainer (Modal = null) {
+  const container = createDiv('modalContainer')
 
   if (Modal) {
-    container.appendChild(Modal);
+    container.appendChild(Modal)
   } else {
-    container.innerHTML = "";
-    container.style.display = "none";
+    container.innerHTML = ''
+    container.style.display = 'none'
   }
 
-  return container;
+  return container
 }
-

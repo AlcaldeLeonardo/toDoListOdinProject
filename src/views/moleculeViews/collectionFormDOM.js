@@ -1,20 +1,20 @@
-import { createInputFormDiv } from "./createInputFormDiv";
-import { createCollectionSubmitBtn } from "../atomViews/createCollectionSubmitBtn";
+import { createInputFormDiv } from './createInputFormDiv'
+import { createCollectionSubmitBtn } from '../atomViews/createCollectionSubmitBtn'
 
-export function collectionFormDOM() {
-  const collectionForm = document.createElement("form");
-  collectionForm.className = "modalContainer__addCollectionForm addCollectionForm";
+export function collectionFormDOM () {
+  const collectionForm = document.createElement('form')
+  collectionForm.className = 'modalContainer__addCollectionForm addCollectionForm'
 
   // Title
   collectionForm.appendChild(
     createInputFormDiv(
-      "collectionFormTitle modalContainer__formDiv modalContainer__formDiv formDiv formDiv--title",
-      "Title",
-      "titleCollection",
-      "Collection Name"
+      'collectionFormTitle modalContainer__formDiv modalContainer__formDiv formDiv formDiv--title',
+      'Title',
+      'titleCollection',
+      'Collection Name'
     )
-  );
-  collectionForm.appendChild(createCollectionSubmitBtn());
+  )
+  collectionForm.appendChild(createCollectionSubmitBtn())
 
-  return collectionForm;
+  return collectionForm
 }
