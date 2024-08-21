@@ -3,7 +3,7 @@ import { TasksCollection } from '../modules/classes/TasksCollection'
 import { updateScreen } from '../views/updateScreen'
 import { updateStorage } from '../modules/updateStorage'
 
-export function addCollectionController (e) {
+export function addCollectionController(e) {
   const form = document.querySelector(
     '.modalContainer__addCollectionForm.addCollectionForm'
   )
@@ -15,5 +15,6 @@ export function addCollectionController (e) {
     CollectionArray.addCollection(collection)
     updateStorage()
     updateScreen()
+
   }
 }
